@@ -17,8 +17,17 @@
   <body>
     {{content-for "body"}}
 
+    <!--[if IE]>
+    <script src="{{rootURL}}assets/vendor-legacy.js"></script>
+    <script src="{{rootURL}}assets/multiple-targets-legacy.js"></script>
+    <![endif]-->
+
+    <!--[if !IE]>
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/multiple-targets.js"></script>
+    <![endif]-->
+
+
 
     {{content-for "body-footer"}}
   </body>

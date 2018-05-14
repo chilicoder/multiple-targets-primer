@@ -11,7 +11,8 @@
   },
   "repository": "",
   "scripts": {
-    "build": "ember build",
+    "build": "ember build --environment=production-legacy --output-path=dist-legacy/ && ember build --prod && npm run copy-legacy",
+    "copy-legacy": "cp dist-legacy/assets/multiple*.js dist/assets && cp dist-legacy/assets/vendor*.js dist/assets",
     "lint:js": "eslint ./*.js app config lib server tests",
     "start": "ember serve",
     "test": "ember test"

@@ -4,7 +4,17 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    fingerprint: {
+      enabled: false
+    },
+    outputPaths: {
+      app: {
+        js: EmberApp.env() === 'production-legacy' ? '/assets/multiple-targets-legacy.js' : '/assets/multiple-targets.js'
+      },
+      vendor: {
+        js: EmberApp.env() === 'production-legacy' ? '/assets/vendor-legacy.js' : '/assets/vendor.js'
+      }
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated

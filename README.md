@@ -1,56 +1,15 @@
 # multiple-targets
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A primer for multi browser targets
 
-## Prerequisites
+Roughly does this:
+1) Use two production environments 'production' and 'production-legacy'
+2) Alter `config/targets`
+3) Alter `app/index.html` to ship different assets to legacy browsers
+4) Alter `ember-cli-build` for legacy asset compilation
+5) Build now means builds two targets (legacy goes to `dist-legacy/`) and copy legacy files into `dist/`
 
-You will need the following things properly installed on your computer.
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
-
-## Installation
-
-* `git clone <repository-url>` this repository
-* `cd multiple-targets`
-* `npm install`
-
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+Open issues:
+[ ] fingeprinting
+[ ] build both `production-legacy` and `production` bundle in one `ember build`
